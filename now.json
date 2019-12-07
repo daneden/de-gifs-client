@@ -3,5 +3,11 @@
     "NETLIFY_AUTH_TOKEN": "@netlify_auth_token",
     "NETLIFY_SITE_ID": "@netlify_site_id",
     "CDN_URL": "@cdn_url"
-  }
+  },
+  "routes": [
+    {
+      "src": "/([a-zA-Z0-9\\-]+)\\.(png|gif|jpe?g)",
+      "dest": "https://de-gifs.netlify.com/$1.$2"
+    }
+  ]
 }
