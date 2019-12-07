@@ -1,0 +1,7 @@
+{
+  "env": {
+    "NETLIFY_AUTH_TOKEN": "@netlify_auth_token",
+    "NETLIFY_SITE_ID": "@netlify_site_id",
+    "CDN_URL": "@cdn_url"
+  }
+}
