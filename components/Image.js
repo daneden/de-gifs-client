@@ -26,7 +26,14 @@ const Image = ({ src }) => {
   }
 
   return (
-    <a className={[styles.root, isGif && styles.isGif].join(' ')} href={src}>
+    <a
+      className={[styles.root, isGif && styles.isGif].join(' ')}
+      href={src}
+      onBlur={onMouseOut}
+      onFocus={onMouseOver}
+      onMouseOut={onMouseOut}
+      onMouseOver={onMouseOver}
+    >
       <Imgix
         className={[styles.image, !hasLoaded && styles.isLoading].join(' ')}
         height={150}
@@ -37,8 +44,6 @@ const Image = ({ src }) => {
         htmlAttributes={{
           loading: 'lazy',
           onLoad,
-          onMouseOut,
-          onMouseOver,
         }}
         src={source}
         width={150}

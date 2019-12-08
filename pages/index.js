@@ -30,6 +30,10 @@ const Home = ({ images }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Archivo:400,700&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <style jsx global>{`
         * {
@@ -42,8 +46,9 @@ const Home = ({ images }) => {
         body {
           background: #101010;
           color: #fff;
-          font: 100%/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-            Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          font: 100%/1.5 'Archivo', -apple-system, BlinkMacSystemFont,
+            'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+            'Helvetica Neue', sans-serif;
         }
       `}</style>
       <input

@@ -1,16 +1,18 @@
 .imageRoot {
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
 }
 
 .searchBox {
   appearance: none;
   background-color: transparent;
+  border: none;
   color: inherit;
   display: block;
   font: inherit;
   font-size: 10vmin;
+  font-weight: 700;
   padding: 0.25em 0.5em;
   width: 100%;
   z-index: 2;
