@@ -12,7 +12,7 @@ const Home = ({ images }) => {
   const [filteredImages, setFilteredImages] = useState(images)
 
   const filterImages = val => {
-    setFilteredImages(images.filter(image => image.id.match(val)))
+    setFilteredImages(images.filter(image => image.id.match(val.toLowerCase())))
   }
 
   const debouncedFilter = useDebounce(filter, 500)

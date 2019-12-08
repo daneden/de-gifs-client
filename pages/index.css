@@ -19,6 +19,6 @@
 }
 
 .searchBox:focus {
-  outline: 0.05em solid dodgerblue;
+  outline: 0.05em solid rgba(255, 255, 255, 0.25);
   outline-offset: -0.05em;
 }
