@@ -28,8 +28,8 @@ const Image = ({ src }) => {
   return (
     <a className={[styles.root, isGif && styles.isGif].join(' ')} href={src}>
       <Imgix
-        className={styles.image}
-        height={200}
+        className={[styles.image, !hasLoaded && styles.isLoading].join(' ')}
+        height={150}
         imgixParams={{
           auto: isHovered ? 'format' : 'compress',
           format: isHovered ? 'auto' : 'jpg',
@@ -39,13 +39,10 @@ const Image = ({ src }) => {
           onLoad,
           onMouseOut,
           onMouseOver,
-          style: {
-            opacity: hasLoaded ? 1 : 0.75,
-            transition: '.25s ease',
-          },
         }}
         src={source}
-        width={200}
+        width={150}
+        sizes={'25vw'}
       />
     </a>
   )

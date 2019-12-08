@@ -2,9 +2,29 @@ import fetch from 'isomorphic-fetch'
 import Head from 'next/head'
 import React from 'react'
 import Image from '../components/Image'
+import useDebounce from '../hooks/useDebounce'
 import styles from './index.css'
 
+const { useEffect, useState } = React
+
 const Home = ({ images }) => {
+  const [filter, setFilter] = useState('')
+  const [filteredImages, setFilteredImages] = useState(images)
+
+  const filterImages = val => {
+    setFilteredImages(images.filter(image => image.id.match(val)))
+  }
+
+  const debouncedFilter = useDebounce(filter, 500)
+
+  useEffect(() => {
+    if (debouncedFilter) {
+      filterImages(debouncedFilter)
+    } else {
+      setFilteredImages(images)
+    }
+  }, [debouncedFilter])
+
   return (
     <>
       <Head>
@@ -26,8 +46,14 @@ const Home = ({ images }) => {
             Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
       `}</style>
+      <input
+        autoFocus={true}
+        className={styles.searchBox}
+        onInput={e => setFilter(e.currentTarget.value)}
+        placeholder={'Search'}
+      />
       <div className={styles.imageRoot}>
-        {images.map(image => (
+        {filteredImages.map(image => (
           <Image key={image.id} src={image.id} />
         ))}
       </div>

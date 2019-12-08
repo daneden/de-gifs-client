@@ -1,10 +1,22 @@
 .imageRoot {
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 }
 
-.imageRoot > * {
-  flex: 1 1 25%;
-  margin: 0.25em;
+.searchBox {
+  appearance: none;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  font: inherit;
+  font-size: 10vmin;
+  padding: 0.25em 0.5em;
+  width: 100%;
+  z-index: 2;
+}
+
+.searchBox:focus {
+  outline: 0.05em solid dodgerblue;
+  outline-offset: -0.05em;
 }
