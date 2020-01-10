@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/node": "^12.12.14",
+    "@types/node": "^13.1.6",
     "@zeit/next-css": "^1.0.1",
     "dotenv": "^8.2.0",
     "https": "^1.0.0",
