@@ -26,16 +26,16 @@ const Image = ({ src }) => {
     }
   }, [entry])
 
-  function onMouseOver(e) {
+  function onMouseOver() {
     setIsHovered(true)
     setHasLoaded(false)
   }
 
-  function onMouseOut(e) {
+  function onMouseOut() {
     setIsHovered(false)
   }
 
-  function onLoad(e) {
+  function onLoad() {
     setHasLoaded(true)
   }
 
