@@ -7,7 +7,7 @@ import styles from './index.css'
 
 const { useEffect, useState } = React
 
-const Home = ({ images }) => {
+const Home = ({ images = [] }) => {
   const [filter, setFilter] = useState('')
   const [filteredImages, setFilteredImages] = useState(images)
 
@@ -30,10 +30,6 @@ const Home = ({ images }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
-        <link
-          href="https://fonts.googleapis.com/css?family=Archivo:400,700&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <style jsx global>{`
         * {
@@ -46,9 +42,13 @@ const Home = ({ images }) => {
         body {
           background: #101010;
           color: #fff;
-          font: 100%/1.5 'Archivo', -apple-system, BlinkMacSystemFont,
-            'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-            'Helvetica Neue', sans-serif;
+          font: 100%/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+            Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #__next {
+          display: flex;
+          flex-direction: column;
         }
       `}</style>
       <input
@@ -66,14 +66,15 @@ const Home = ({ images }) => {
   )
 }
 
-Home.getInitialProps = async ctx => {
+export async function getServerSideProps(ctx) {
   const { process, req } = ctx
   const origin =
     process && process.browser
       ? window.location.origin
       : `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
   const r = await fetch(`${origin}/api/imageList`)
-  return { images: await r.json() }
+  const images = await r.json()
+  return { props: { images } }
 }
 
 export default Home
