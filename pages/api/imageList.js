@@ -17,6 +17,7 @@ export default async (req, res) => {
         }
       })
     })
+    .then(files => files.filter(file => file.id !== '_headers'))
     .then(files => {
       return files.sort((a, b) => {
         return a.id.localeCompare(b.id)
