@@ -17,7 +17,11 @@ export default async (req, res) => {
         }
       })
     })
-    .then(files => files.filter(file => file.id !== '_headers'))
+    .then(files =>
+      files.filter(file => {
+        return /\.(jpe?g|png|gif)$/.test(file.id)
+      })
+    )
     .then(files => {
       return files.sort((a, b) => {
         return a.id.localeCompare(b.id)
