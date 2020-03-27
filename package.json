@@ -14,7 +14,7 @@
     "https": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "netlify": "^3.1.0",
-    "next": "^9.3.1",
+    "next": "^9.3.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-imgix": "^9.0.1"
