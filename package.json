@@ -13,7 +13,7 @@
     "dotenv": "^8.2.0",
     "https": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
-    "netlify": "^4.0.3",
+    "netlify": "^4.0.4",
     "next": "^9.3.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
