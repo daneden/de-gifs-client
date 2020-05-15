@@ -1020,10 +1020,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@netlify/open-api@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.14.0.tgz#f7e26602a2f25f6ebb4efc96c5cc907b5ea4296c"
-  integrity sha512-epAbGVkUtFutiVDBqqepW/6Le619rGk79bnhEO7pMRMoVlPt3ga/hiFrqxozXI+QUvcHw6lvDSli6MLAonBIig==
+"@netlify/open-api@^0.15.0":
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.15.0.tgz#cf75d2ed2131e73fbcbdddbf1638e92cd0855aa3"
+  integrity sha512-Nk1NswVrUtI7SDbyn/uvITYeIG5iukKlhsu/6fg4k1G5RMHqMDtVHy+2qcOhKmkf7Qc3ZkIKKd2mQfM6zg2cxw==
 
 "@netlify/zip-it-and-ship-it@^0.4.0-18":
   version "0.4.0-18"
@@ -4272,12 +4272,12 @@ nested-error-stacks@^2.0.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify@^4.1.5:
-  version "4.1.5"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.1.5.tgz#5e600b30184faf4d02f1b4999047e1840f320d10"
-  integrity sha512-73OLoP60bc09fKXyOzTel+QALKJQS5Y9WYZphzTmkNTqXeq3vDVfaF7e50Cl7vppTxwpZ0r4YQVQt24TPu3UDw==
+netlify@^4.1.6:
+  version "4.1.6"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.1.6.tgz#a45c61ac12107afc08364a5577296cba80920225"
+  integrity sha512-cBcwOur3K80kJLby5X2o51LwDjCCG72lg6dQMlKDyWcYXNJ+2wwOr/SoJ4zxp39nVYdpGnHARi8dMW2Gf37IHw==
   dependencies:
-    "@netlify/open-api" "^0.14.0"
+    "@netlify/open-api" "^0.15.0"
     "@netlify/zip-it-and-ship-it" "^0.4.0-18"
     backoff "^2.5.0"
     clean-deep "^3.3.0"
