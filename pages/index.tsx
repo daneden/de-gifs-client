@@ -34,7 +34,7 @@ const Home = ({ images = [] }) => {
     )
   }
 
-  const colWidth = 160
+  const colWidth = 187
   const rowHeight = colWidth
 
   const getColumnCount = (width, target) => {
