@@ -1,9 +1,25 @@
-import fetch from 'isomorphic-fetch'
 import Head from 'next/head'
+import { GetStaticProps } from 'next'
 import React from 'react'
 import Image from '../components/Image'
 import useDebounce from '../hooks/useDebounce'
 import styles from './index.css'
+import NetlifyAPI from 'netlify'
+
+require('dotenv').config()
+
+interface Image {
+    id: string,
+    size: number
+}
+
+interface Extra {
+    [key: string]: unknown
+}
+
+type LooseImage = Image & Extra
+
+const netlify = new NetlifyAPI(process.env.NETLIFY_AUTH_TOKEN)
 
 const { useEffect, useState } = React
 
@@ -11,7 +27,7 @@ const Home = ({ images = [] }) => {
   const [filter, setFilter] = useState('')
   const [filteredImages, setFilteredImages] = useState(images)
 
-  const filterImages = val => {
+  const filterImages = (val: string) => {
     setFilteredImages(images.filter(image => image.id.match(val.toLowerCase())))
   }
 
@@ -66,15 +82,31 @@ const Home = ({ images = [] }) => {
   )
 }
 
-export async function getServerSideProps(ctx) {
-  const { process, req } = ctx
-  const origin =
-    process && process.browser
-      ? window.location.origin
-      : `${req.headers['x-forwarded-proto']}://${req.headers['x-forwarded-host']}`
-  const r = await fetch(`${origin}/api/imageList`)
-  const images = await r.json()
-  return { props: { images } }
+export const getStaticProps: GetStaticProps = async () => {
+  const images = await netlify
+    .listSiteFiles({
+      site_id: process.env.NETLIFY_SITE_ID,
+    })
+    .then((data: LooseImage[]) => {
+      return data.map(({ id, size }) => {
+        return {
+          id,
+          size,
+        }
+      })
+    })
+    .then((files: Image[]) =>
+      files.filter(file => {
+        return /\.(jpe?g|png|gif)$/.test(file.id)
+      })
+    )
+    .then((files: Image[]) => {
+      return files.sort((a, b) => {
+        return a.id.localeCompare(b.id)
+      })
+    })
+    .catch((err: Error) => console.error(err))
+  return { props: { images }, unstable_revalidate: 1 }
 }
 
 export default Home
