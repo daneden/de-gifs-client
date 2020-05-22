@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import React from 'react'
 import Image from '../components/Image'
 import useDebounce from '../hooks/useDebounce'
-import styles from './index.css'
+import styles from './index.module.css'
 import NetlifyAPI from 'netlify'
 
 require('dotenv').config()
