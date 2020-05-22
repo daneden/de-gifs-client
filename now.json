@@ -8,6 +8,6 @@
     {
       "src": "/([a-zA-Z0-9\\-]+)\\.(png|gif|jpe?g)",
       "dest": "https://de-gifs.netlify.com/$1.$2"
-    },
+    }
   ]
 }
