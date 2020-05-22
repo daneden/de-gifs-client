@@ -53,7 +53,7 @@ const Image = ({ src }) => {
           alt: src.split('.')[0],
           loading: 'lazy',
           onLoad,
-          src: `${source}?blur=200&auto=format`
+          src: `${source}?blur=200&px=16&auto=format`
         }}
         src={source}
         width={150}
