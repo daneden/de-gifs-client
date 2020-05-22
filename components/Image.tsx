@@ -2,29 +2,18 @@ import Imgix from 'react-imgix'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
 import React from 'react'
 import styles from './Image.module.css'
+import 'lazysizes'
+import 'lazysizes/plugins/attrchange/ls.attrchange'
 
-const { useLayoutEffect, useState } = React
+const { useState } = React
 
 const Image = ({ src }) => {
   const [isHovered, setIsHovered] = useState(false)
-  const [onScreen, setOnScreen] = useState(false)
   const [hasLoaded, setHasLoaded] = useState(true)
-  const [ref, entry] = useIntersectionObserver({
-    rootMargin: '24px',
-    threshold: [0, 1],
-  })
   const baseUrl = isHovered ? 'de-gifs.netlify.com' : 'de-gif-netlify.imgix.net'
   const source = `https://${baseUrl}${src}`
 
   const isGif = src.match('gif$')
-
-  useLayoutEffect(() => {
-    if (entry?.intersectionRatio > 0) {
-      setOnScreen(true)
-    } else {
-      setOnScreen(false)
-    }
-  }, [entry])
 
   function onMouseOver() {
     setIsHovered(true)
@@ -55,12 +44,16 @@ const Image = ({ src }) => {
           auto: isHovered ? 'format' : 'compress',
           format: isHovered ? 'auto' : 'jpg',
         }}
+        attributeConfig={{
+          src: "data-src",
+          srcSet: "data-srcset",
+          sizes: "data-sizes",
+        }}
         htmlAttributes={{
           alt: src.split('.')[0],
-          ref,
           loading: 'lazy',
           onLoad,
-          src: !onScreen && `${source}?blur=200&auto=format`
+          src: `${source}?blur=200&auto=format`
         }}
         src={source}
         width={150}
