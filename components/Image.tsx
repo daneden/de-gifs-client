@@ -56,6 +56,7 @@ const Image = ({ src }) => {
           format: isHovered ? 'auto' : 'jpg',
         }}
         htmlAttributes={{
+          alt: src.split('.')[0],
           ref,
           loading: 'lazy',
           onLoad,
