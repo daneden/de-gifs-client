@@ -1,6 +1,6 @@
 .imageRoot {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   gap: 1px;
 }
 
