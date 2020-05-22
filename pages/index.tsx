@@ -3,6 +3,8 @@ import { GetStaticProps } from 'next'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import React from 'react'
+import AutoSizer from 'react-virtualized-auto-sizer'
+import { FixedSizeGrid as Grid } from 'react-window'
 import useDebounce from '../hooks/useDebounce'
 import styles from './index.module.css'
 
@@ -34,6 +36,17 @@ const Home = ({ images = [] }) => {
   }
 
   const debouncedFilter = useDebounce(filter, 500)
+
+  const colWidth = 200
+  const rowHeight = 200
+
+  const getColumnCount = (width, target) => {
+    return Math.floor(width / target)
+  }
+
+  const getRowCount = (width, target) => {
+    return Math.ceil(width / target)
+  }
 
   useEffect(() => {
     if (debouncedFilter) {
@@ -88,11 +101,23 @@ const Home = ({ images = [] }) => {
         onInput={(e) => setFilter(e.currentTarget.value)}
         placeholder={'Search'}
       />
-      <div className={styles.imageRoot}>
-        {filteredImages.map((image) => (
-          <Image key={image.id} src={image.id} />
-        ))}
-      </div>
+      <AutoSizer>
+        {({ height, width }) => (
+          <Grid
+            height={height}
+            width={width}
+            itemCount={filteredImages.length}
+            columnWidth={colWidth}
+            columnCount={getColumnCount(width, colWidth)}
+            rowHeight={rowHeight}
+            rowCount={getRowCount(height, colWidth)}
+          >
+            {filteredImages.map((image) => (
+              <Image key={image.id} src={image.id} />
+            ))}
+          </Grid>
+        )}
+      </AutoSizer>
     </>
   )
 }
