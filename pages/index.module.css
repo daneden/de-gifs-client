@@ -1,0 +1,25 @@
+.searchBox {
+  appearance: none;
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(30, 30, 30, 0.9);
+  border-radius: 8px;
+  border: none;
+  box-shadow: var(--defaultInputShadow);
+  color: inherit;
+  display: block;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 8px;
+  max-width: 500px;
+  padding: 0.25em 0.5em;
+  position: absolute;
+  top: 12px;
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.searchBox:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 3px #af52de, var(--defaultInputShadow);
+}
