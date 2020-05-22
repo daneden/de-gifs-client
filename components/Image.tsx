@@ -54,13 +54,16 @@ const Image = ({ src }) => {
         imgixParams={{
           auto: isHovered ? 'format' : 'compress',
           format: isHovered ? 'auto' : 'jpg',
+          ...!onScreen && {
+            blur: 200,
+            px: 16
+          }
         }}
         htmlAttributes={{
           alt: src.split('.')[0],
           ref,
           loading: 'lazy',
           onLoad,
-          src: !onScreen && `${source}?blur=200&px=20&auto=format`
         }}
         src={source}
         width={150}
