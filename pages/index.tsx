@@ -1,34 +1,36 @@
-import Head from 'next/head'
+import NetlifyAPI from 'netlify'
 import { GetStaticProps } from 'next'
+import dynamic from 'next/dynamic'
+import Head from 'next/head'
 import React from 'react'
-import Image from '../components/Image'
 import useDebounce from '../hooks/useDebounce'
 import styles from './index.module.css'
-import NetlifyAPI from 'netlify'
 
 require('dotenv').config()
 
 interface Image {
-    id: string,
-    size: number
+  id: string
+  size: number
 }
 
 interface Extra {
-    [key: string]: unknown
+  [key: string]: unknown
 }
 
 type LooseImage = Image & Extra
 
 const netlify = new NetlifyAPI(process.env.NETLIFY_AUTH_TOKEN)
-
 const { useEffect, useState } = React
+const Image = dynamic(() => import('../components/Image'), { ssr: false })
 
 const Home = ({ images = [] }) => {
   const [filter, setFilter] = useState('')
   const [filteredImages, setFilteredImages] = useState(images)
 
   const filterImages = (val: string) => {
-    setFilteredImages(images.filter(image => image.id.match(val.toLowerCase())))
+    setFilteredImages(
+      images.filter((image) => image.id.match(val.toLowerCase()))
+    )
   }
 
   const debouncedFilter = useDebounce(filter, 500)
@@ -62,7 +64,8 @@ const Home = ({ images = [] }) => {
 
         :root {
           --defaultInputShadow: 0 8px 24px rgba(0, 0, 0, 0.75),
-            0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+            0 0 1px 1px rgba(0, 0, 0, 0.1),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
         }
 
         body {
@@ -82,11 +85,11 @@ const Home = ({ images = [] }) => {
         id="search"
         autoFocus={true}
         className={styles.searchBox}
-        onInput={e => setFilter(e.currentTarget.value)}
+        onInput={(e) => setFilter(e.currentTarget.value)}
         placeholder={'Search'}
       />
       <div className={styles.imageRoot}>
-        {filteredImages.map(image => (
+        {filteredImages.map((image) => (
           <Image key={image.id} src={image.id} />
         ))}
       </div>
@@ -108,7 +111,7 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     })
     .then((files: Image[]) =>
-      files.filter(file => {
+      files.filter((file) => {
         return /\.(jpe?g|png|gif)$/.test(file.id)
       })
     )

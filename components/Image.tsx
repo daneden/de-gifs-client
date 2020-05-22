@@ -1,6 +1,6 @@
+import React from 'react'
 import Imgix from 'react-imgix'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
-import React from 'react'
 import styles from './Image.module.css'
 
 const { useLayoutEffect, useState } = React
@@ -54,10 +54,10 @@ const Image = ({ src }) => {
         imgixParams={{
           auto: isHovered ? 'format' : 'compress',
           format: isHovered ? 'auto' : 'jpg',
-          ...!onScreen && {
+          ...(!onScreen && {
             blur: 200,
-            px: 16
-          }
+            px: 16,
+          }),
         }}
         htmlAttributes={{
           alt: src.split('.')[0],
