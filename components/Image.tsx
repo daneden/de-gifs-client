@@ -1,9 +1,9 @@
-import React from 'react'
 import Imgix from 'react-imgix'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
+import React from 'react'
 import styles from './Image.module.css'
 
-const { useEffect, useState } = React
+const { useLayoutEffect, useState } = React
 
 const Image = ({ src }) => {
   const [isHovered, setIsHovered] = useState(false)
@@ -18,7 +18,7 @@ const Image = ({ src }) => {
 
   const isGif = src.match('gif$')
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (entry?.intersectionRatio > 0) {
       setOnScreen(true)
     } else {
@@ -50,7 +50,7 @@ const Image = ({ src }) => {
     >
       <Imgix
         className={[styles.image, !hasLoaded && styles.isLoading].join(' ')}
-        height={onScreen ? 150 : 15}
+        height={150}
         imgixParams={{
           auto: isHovered ? 'format' : 'compress',
           format: isHovered ? 'auto' : 'jpg',
@@ -60,9 +60,10 @@ const Image = ({ src }) => {
           ref,
           loading: 'lazy',
           onLoad,
+          src: !onScreen && `${source}?blur=200&auto=format`
         }}
         src={source}
-        width={onScreen ? 150 : 15}
+        width={150}
         sizes={'25vw'}
       />
     </a>
