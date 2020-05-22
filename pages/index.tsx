@@ -55,6 +55,11 @@ const Home = ({ images = [] }) => {
           position: relative;
         }
 
+        :root {
+          --defaultInputShadow: 0 8px 24px rgba(0, 0, 0, 0.75),
+            0 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
         body {
           background: #101010;
           color: #fff;
