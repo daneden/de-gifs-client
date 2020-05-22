@@ -2,6 +2,10 @@
   display: block;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  padding: 1px;
+  background-color: rgba(255, 255, 255, 0.05);
+  background-clip: content-box;
 }
 
 .image {

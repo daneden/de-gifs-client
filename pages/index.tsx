@@ -5,7 +5,6 @@ import Head from 'next/head'
 import React from 'react'
 import AutoSizer from 'react-virtualized-auto-sizer'
 import { FixedSizeGrid as Grid } from 'react-window'
-import useDebounce from '../hooks/useDebounce'
 import styles from './index.module.css'
 
 require('dotenv').config()
@@ -35,26 +34,35 @@ const Home = ({ images = [] }) => {
     )
   }
 
-  const debouncedFilter = useDebounce(filter, 500)
-
-  const colWidth = 200
-  const rowHeight = 200
+  const colWidth = 160
+  const rowHeight = colWidth
 
   const getColumnCount = (width, target) => {
     return Math.floor(width / target)
   }
 
-  const getRowCount = (width, target) => {
-    return Math.ceil(width / target)
+  const getRowCount = (columnCount) => {
+    return Math.ceil(filteredImages.length / columnCount)
+  }
+
+  const Cell = ({ columnIndex, rowIndex, style, data }) => {
+    const index = rowIndex * data.columnCount + columnIndex
+    const image = filteredImages[index]?.id
+
+    return image ? (
+      <div style={style}>
+        <Image src={image} />
+      </div>
+    ) : null
   }
 
   useEffect(() => {
-    if (debouncedFilter) {
-      filterImages(debouncedFilter)
+    if (filter) {
+      filterImages(filter)
     } else {
       setFilteredImages(images)
     }
-  }, [debouncedFilter])
+  }, [filter])
 
   return (
     <>
@@ -86,9 +94,11 @@ const Home = ({ images = [] }) => {
           color: #fff;
           font: 100%/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
             Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          min-height: 100vh;
         }
 
         #__next {
+          height: 100vh;
           display: flex;
           flex-direction: column;
         }
@@ -106,15 +116,13 @@ const Home = ({ images = [] }) => {
           <Grid
             height={height}
             width={width}
-            itemCount={filteredImages.length}
+            itemData={{ columnCount: getColumnCount(width, colWidth) }}
             columnWidth={colWidth}
             columnCount={getColumnCount(width, colWidth)}
             rowHeight={rowHeight}
-            rowCount={getRowCount(height, colWidth)}
+            rowCount={getRowCount(getColumnCount(width, colWidth))}
           >
-            {filteredImages.map((image) => (
-              <Image key={image.id} src={image.id} />
-            ))}
+            {Cell}
           </Grid>
         )}
       </AutoSizer>
