@@ -1,7 +1,7 @@
 import React from 'react'
 import Imgix from 'react-imgix'
 import useIntersectionObserver from '../hooks/useIntersectionObserver'
-import styles from './Image.css'
+import styles from './Image.module.css'
 
 const { useEffect, useState } = React
 
