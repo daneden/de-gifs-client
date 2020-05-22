@@ -44,6 +44,11 @@ const Home = ({ images = [] }) => {
   return (
     <>
       <Head>
+        <title>Daniel Eden's GIF trove</title>
+        <meta
+          name="description"
+          content="The GIF/reactions image library of Daniel Eden, a designer living and working in London, England"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta charSet="utf-8" />
       </Head>
@@ -73,6 +78,8 @@ const Home = ({ images = [] }) => {
         }
       `}</style>
       <input
+        aria-label="Search"
+        id="search"
         autoFocus={true}
         className={styles.searchBox}
         onInput={e => setFilter(e.currentTarget.value)}
