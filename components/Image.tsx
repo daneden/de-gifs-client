@@ -11,7 +11,7 @@ const Image = ({ src }) => {
   const [hasLoaded, setHasLoaded] = useState(true)
   const [ref, entry] = useIntersectionObserver({
     rootMargin: '24px',
-    threshold: [0.5, 1],
+    threshold: [0, 0.5, 1],
   })
   const baseUrl = isHovered ? 'de-gifs.netlify.com' : 'de-gif-netlify.imgix.net'
   const source = `https://${baseUrl}${src}`
