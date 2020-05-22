@@ -45,7 +45,12 @@ const Home = ({ images = [] }) => {
     return Math.ceil(filteredImages.length / columnCount)
   }
 
-  const Cell = React.memo(({ columnIndex, rowIndex, style, data }) => {
+  const Cell = React.memo<{
+    columnIndex: number
+    rowIndex: number
+    style: any
+    data: any
+  }>(({ columnIndex, rowIndex, style, data }) => {
     const index = rowIndex * data.columnCount + columnIndex
     const image = filteredImages[index]?.id
 
