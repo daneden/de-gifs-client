@@ -6,8 +6,6 @@
 
 .imageRoot > * {
   flex: 1 1 10rem;
-  aspect-ratio: 1 / 1;
-  max-height: 10rem;
   margin: 1px;
 }
 

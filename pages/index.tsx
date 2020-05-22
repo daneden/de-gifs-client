@@ -5,8 +5,6 @@ import Image from '../components/Image'
 import useDebounce from '../hooks/useDebounce'
 import styles from './index.module.css'
 import NetlifyAPI from 'netlify'
-import { FixedSizeGrid as Grid } from 'react-window'
-import AutoSizer from 'react-virtualized-auto-sizer'
 
 require('dotenv').config()
 
@@ -34,17 +32,6 @@ const Home = ({ images = [] }) => {
   }
 
   const debouncedFilter = useDebounce(filter, 500)
-
-  const colWidth = 200
-  const rowHeight = 200
-
-  const getColumnCount = (width, target) => {
-    return Math.floor(width / target)
-  }
-
-  const getRowCount = (width, target) => {
-    return Math.ceil(width / target)
-  }
 
   useEffect(() => {
     if (debouncedFilter) {
@@ -98,23 +85,11 @@ const Home = ({ images = [] }) => {
         onInput={e => setFilter(e.currentTarget.value)}
         placeholder={'Search'}
       />
-      <AutoSizer>
-        {({height, width}) => (
-          <Grid
-            height={height}
-            width={width}
-            itemCount={filteredImages.length}
-            columnWidth={colWidth}
-            columnCount={getColumnCount(width, colWidth)}
-            rowHeight={rowHeight}
-            rowCount={getRowCount(height, colWidth)}
-          >
-            {filteredImages.map(image => (
-              <Image key={image.id} src={image.id} />
-            ))}
-          </Grid>
-        )}
-      </AutoSizer>
+      <div className={styles.imageRoot}>
+        {filteredImages.map(image => (
+          <Image key={image.id} src={image.id} />
+        ))}
+      </div>
     </>
   )
 }

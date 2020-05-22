@@ -15,9 +15,7 @@
     "next": "^9.4.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-imgix": "^9.0.2",
-    "react-virtualized-auto-sizer": "^1.0.2",
-    "react-window": "^1.8.5"
+    "react-imgix": "^9.0.2"
   },
   "devDependencies": {
     "@types/node": "^14.0.5",
