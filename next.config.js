@@ -1,5 +1,7 @@
-// next.config.js
-const withCSS = require('@zeit/next-css')
-module.exports = withCSS({
-  cssModules: true,
-})
+module.exports = {
+  webpack: (config, options) => {
+    config.node = {
+      fs: 'empty'
+    }
+  }
+}
