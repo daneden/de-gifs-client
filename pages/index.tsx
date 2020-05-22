@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 import React from 'react'
 import AutoSizer from 'react-virtualized-auto-sizer'
-import { FixedSizeGrid as Grid } from 'react-window'
+import { areEqual, FixedSizeGrid as Grid } from 'react-window'
 import styles from './index.module.css'
 
 require('dotenv').config()
@@ -45,7 +45,7 @@ const Home = ({ images = [] }) => {
     return Math.ceil(filteredImages.length / columnCount)
   }
 
-  const Cell = ({ columnIndex, rowIndex, style, data }) => {
+  const Cell = React.memo(({ columnIndex, rowIndex, style, data }) => {
     const index = rowIndex * data.columnCount + columnIndex
     const image = filteredImages[index]?.id
 
@@ -54,7 +54,7 @@ const Home = ({ images = [] }) => {
         <Image src={image} />
       </div>
     ) : null
-  }
+  }, areEqual)
 
   useEffect(() => {
     if (filter) {
