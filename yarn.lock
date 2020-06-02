@@ -1024,10 +1024,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.15.0.tgz#cf75d2ed2131e73fbcbdddbf1638e92cd0855aa3"
   integrity sha512-Nk1NswVrUtI7SDbyn/uvITYeIG5iukKlhsu/6fg4k1G5RMHqMDtVHy+2qcOhKmkf7Qc3ZkIKKd2mQfM6zg2cxw==
 
-"@netlify/zip-it-and-ship-it@^0.4.0-19":
-  version "0.4.0-19"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-0.4.0-19.tgz#18acc25e664d1a71b3abaaf9b2d27d0c8cd971b6"
-  integrity sha512-QjGw5d8iTa9JLqFzMJw2DPYAmG0q7mfZsahf5rPPCmdNty/HkmNTkSswgxuTX+BCXsfjCnfCGbVZbM+8crIT0w==
+"@netlify/zip-it-and-ship-it@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-1.1.0.tgz#9b0e950ba6e551ce76428400f7aee6eb1917208a"
+  integrity sha512-/MkvRL1eRPZ43U/dT2MsRsGSi1U6gFJobfuwz/3SFSNu+HdzsX/QgTs1VsHlKQejMYOtOyIAzgswFkV/UHs7qg==
   dependencies:
     archiver "^3.0.0"
     common-path-prefix "^2.0.0"
@@ -1036,6 +1036,7 @@
     end-of-stream "^1.4.4"
     find-up "^4.1.0"
     glob "^7.1.6"
+    junk "^3.1.0"
     make-dir "^3.0.2"
     p-map "^3.0.0"
     path-exists "^4.0.0"
@@ -3728,6 +3729,11 @@ json5@^2.1.2:
   dependencies:
     minimist "^1.2.5"
 
+junk@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/junk/-/junk-3.1.0.tgz#31499098d902b7e98c5d9b9c80f43457a88abfa1"
+  integrity sha512-pBxcB3LFc8QVgdggvZWyeys+hnrNWg4OcZIU/1X59k5jQdLBlCsYGRQaz234SqoRLTCgMH00fY0xRJH+F9METQ==
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -4202,13 +4208,13 @@ nested-error-stacks@^2.0.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify@^4.1.7:
-  version "4.1.7"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.1.7.tgz#8b10198a1fb6896a577f19eec6b611094be128c7"
-  integrity sha512-MMI84bLb1QrkAadnNRvglcUbje+hJNQo3ZEUAYJSUiQ4QPpIp9cuayFtfJ/N/dYRPehNiH7B6ZbSZ9FfmpUyVA==
+netlify@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.2.0.tgz#97e09a84cdcb054b208923ddabe7d78ddb74ea93"
+  integrity sha512-sBTEcLkr9c/fv6tQDOCxm0QrXEUF4CaHamJBiswC/XR3btaBE14JJODUxUTffNXZoykj2U2YlsYl4dWsL60JZg==
   dependencies:
     "@netlify/open-api" "^0.15.0"
-    "@netlify/zip-it-and-ship-it" "^0.4.0-19"
+    "@netlify/zip-it-and-ship-it" "^1.1.0"
     backoff "^2.5.0"
     clean-deep "^3.3.0"
     filter-obj "^2.0.1"
