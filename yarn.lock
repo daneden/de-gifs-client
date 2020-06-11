@@ -1024,10 +1024,10 @@
   resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.15.0.tgz#cf75d2ed2131e73fbcbdddbf1638e92cd0855aa3"
   integrity sha512-Nk1NswVrUtI7SDbyn/uvITYeIG5iukKlhsu/6fg4k1G5RMHqMDtVHy+2qcOhKmkf7Qc3ZkIKKd2mQfM6zg2cxw==
 
-"@netlify/zip-it-and-ship-it@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-1.1.0.tgz#9b0e950ba6e551ce76428400f7aee6eb1917208a"
-  integrity sha512-/MkvRL1eRPZ43U/dT2MsRsGSi1U6gFJobfuwz/3SFSNu+HdzsX/QgTs1VsHlKQejMYOtOyIAzgswFkV/UHs7qg==
+"@netlify/zip-it-and-ship-it@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-1.2.0.tgz#919a6b1826cb6521c1667e81b659dd76b99c973b"
+  integrity sha512-aNbB0DcS2t0Iw6OqGVb5YezElyL9teflPPT8k9kDLaW7BDkYt/6eWSReGNnDGfIrEDUsq0GxBLK+wQTw+WeXNQ==
   dependencies:
     archiver "^3.0.0"
     common-path-prefix "^2.0.0"
@@ -1037,6 +1037,7 @@
     find-up "^4.1.0"
     glob "^7.1.6"
     junk "^3.1.0"
+    locate-path "^5.0.0"
     make-dir "^3.0.2"
     p-map "^3.0.0"
     path-exists "^4.0.0"
@@ -4208,13 +4209,13 @@ nested-error-stacks@^2.0.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.3.0.tgz#cfaf638754c04e0aa713978eb9531da445dd55ff"
-  integrity sha512-4tDEc8CtRbM/Lbvooyn9pAIsfpyiW5euqxViFM1SWOjFeH96P2eh0RfMj03+NVaZ3O7d92JqNAKZliPHf+ulNA==
+netlify@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.3.1.tgz#37d840088b0bb5af9483cca78c214a52bf74266f"
+  integrity sha512-Paowbvr0Gm0uTkiDz56jB7zsCIyKvZCKEC5ujH9lpVrxUYSp9D3jp969iilP0vopBR/x0tSFPT5dOb2nIvM/Aw==
   dependencies:
     "@netlify/open-api" "^0.15.0"
-    "@netlify/zip-it-and-ship-it" "^1.1.0"
+    "@netlify/zip-it-and-ship-it" "^1.2.0"
     backoff "^2.5.0"
     clean-deep "^3.3.0"
     filter-obj "^2.0.1"
