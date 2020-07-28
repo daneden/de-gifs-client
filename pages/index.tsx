@@ -159,7 +159,7 @@ export const getStaticProps: GetStaticProps = async () => {
       })
     })
     .catch((err: Error) => console.error(err))
-  return { props: { images }, unstable_revalidate: 1 }
+  return { props: { images }, revalidate: 1 }
 }
 
 export default Home
