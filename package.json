@@ -13,7 +13,7 @@
     "https": "^1.0.0",
     "isomorphic-fetch": "^2.2.1",
     "netlify": "^4.3.12",
-    "next": "^9.5.0",
+    "next": "^9.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-imgix": "^9.0.2",
