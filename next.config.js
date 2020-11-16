@@ -1,9 +1,12 @@
 module.exports = {
+  images: {
+    domains: ['de-gifs.netlify.com'],
+  },
   webpack: (config) => {
     config.node = {
-      fs: 'empty'
+      fs: 'empty',
     }
 
     return config
-  }
+  },
 }
