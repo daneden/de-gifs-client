@@ -1146,10 +1146,10 @@
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.1.0.tgz#6c9eafc78c1529248f8f4d92b0799a712b6052c6"
   integrity sha512-i9YbZPN3QgfighY/1X1Pu118VUz2Fmmhd6b2n0/O8YVgGGfw0FbUYoA97k7FkpGJ+pLCFEDLUmAPPV4D1kpeFw==
 
-"@netlify/open-api@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-0.18.0.tgz#76ab32432863e5e7a97e318c2967feb0a72feda8"
-  integrity sha512-2pgw9SngxtxNcg0g4OJzhHRWmXE/sGpjBn0KfeyKH6kyrY4a3XcKwIZLKuxVLuHxgkpdoBbsFlJBTlsj61g8Dw==
+"@netlify/open-api@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-1.0.0.tgz#b68c426ee60b2adb28084b3058731dc6b59a5bd6"
+  integrity sha512-LAicAlsAZXybGtKzaOTmIYelSe82vgZlc17IeNUQxab2IlUCH7VhTKCx9EyJEgiXhLvmYoOjuYE1Ee9ZsnrybA==
 
 "@netlify/zip-it-and-ship-it@^1.3.12":
   version "1.3.12"
@@ -4233,12 +4233,12 @@ nested-error-stacks@^2.0.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify@^4.7.0:
-  version "4.7.0"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-4.7.0.tgz#d69e09958471466b05f1aa93f24c769ee25cfcce"
-  integrity sha512-ylGfihIjzVrimuLo6Pl/pGwIIZ9IHxHEemtUu2YBv8fnZzj5rDTHZCNNLaYLDMGo6Oe0o83yR7fnd0pnBHf2Aw==
+netlify@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-6.0.0.tgz#377a9cb453acafe2d18056b2281670035a89f94c"
+  integrity sha512-CKg0/bU3CXGcyjOvjoLy86LT1eQ/wNlS+8jcwhw1I4pGzREkH6aQWu50dSt8JGUMGTlHxxvZpK4rqN6iAeohaA==
   dependencies:
-    "@netlify/open-api" "^0.18.0"
+    "@netlify/open-api" "^1.0.0"
     "@netlify/zip-it-and-ship-it" "^1.3.12"
     backoff "^2.5.0"
     clean-deep "^3.3.0"
@@ -4348,12 +4348,12 @@ node-addon-api@^3.0.2:
   resolved "https://registry.yarnpkg.com/node-addon-api/-/node-addon-api-3.0.2.tgz#04bc7b83fd845ba785bb6eae25bc857e1ef75681"
   integrity sha512-+D4s2HCnxPd5PjjI0STKwncjXTUKKqm74MDMz9OPXavjsGmjkvwgLtA5yoxJUdmpj52+2u+RrXgPipahKczMKg==
 
-node-fetch@2.6.0, node-fetch@^2.2.0:
+node-fetch@2.6.0:
   version "2.6.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
   integrity sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
 
-node-fetch@2.6.1:
+node-fetch@2.6.1, node-fetch@^2.2.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
   integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
