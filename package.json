@@ -11,7 +11,7 @@
     "@types/react-window": "^1.8.2",
     "dotenv": "^8.2.0",
     "https": "^1.0.0",
-    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-fetch": "^3.0.0",
     "netlify": "^6.0.6",
     "next": "^10.0.1",
     "react": "^17.0.1",
