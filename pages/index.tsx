@@ -1,4 +1,4 @@
-import NetlifyAPI from 'netlify'
+import { NetlifyAPI } from 'netlify'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React, { useEffect, useState } from 'react'
