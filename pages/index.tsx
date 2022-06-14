@@ -1,7 +1,7 @@
 import { NetlifyAPI } from 'netlify'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import ImagePreview from '../components/ImagePreview'
 import ImagePreviewContext from '../components/ImagePreviewContext'
 
@@ -19,7 +19,6 @@ interface ExtraFields {
 type LooseImage = Image & ExtraFields
 
 const Home = ({ images = [] }) => {
-  const [filter, setFilter] = useState('')
   const [filteredImages, setFilteredImages] = useState(images)
   const [previewImageId, setPreviewImageId] = useState<string>()
 
@@ -29,15 +28,7 @@ const Home = ({ images = [] }) => {
     )
   }
 
-  useEffect(() => {
-    if (filter) {
-      filterImages(filter)
-    } else {
-      setFilteredImages(images)
-    }
-  }, [filter])
-
-  function handleMouseOver(id) {
+  function handleMouseOver(id: string) {
     setPreviewImageId(id)
   }
 
@@ -57,7 +48,9 @@ const Home = ({ images = [] }) => {
         autoCorrect={'none'}
         id="search"
         autoFocus={true}
-        onInput={(e) => setFilter(e.currentTarget.value)}
+        onInput={(e) => {
+          filterImages(e.currentTarget.value)
+        }}
         placeholder={'Search'}
         type="search"
       />
