@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@netlify/open-api@^2.8.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.9.0.tgz#3fd18a95c06e7f11aad20b15c1e525accc86369f"
-  integrity sha512-XhGmVR8gldH9+3CzBg8C7aj7x/cThzlW/ob/o8ZAGMMJ7aVjs8WqzYpVsjdo4nulYi0zd0enlcuG9VwM1tsJyA==
+"@netlify/open-api@^2.11.0":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.11.0.tgz#0086ce3cf13976cffe8e2b01bff869dd819cadb8"
+  integrity sha512-ni6R1xdR8EtH0iB8ixGt9ocuboW+Q8eN4ilTX8lfNHS6Y6Q2S+O/aB2n1BnAgv39wopeQsQ2meL9vfEePURl7w==
 
 "@next/env@12.2.4":
   version "12.2.4"
@@ -170,12 +170,12 @@ nanoid@^3.3.4:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-netlify@^11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-11.0.1.tgz#ab2551001e3d2d845ac0c14c2138427c90a3935e"
-  integrity sha512-TkVuTvmhlAtvAdgqb+iA5wMehEHS5QcPOrULm1t809Q6KmZIhe+7b0+jwZSsDqgX3OWK/P3xgk/AU0ZbTv7ufw==
+netlify@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-12.0.0.tgz#3759dc152cb155f875e8433437e4d37ef48f8450"
+  integrity sha512-4LfNS4c/9301B0oxzosmHD7NHhOvvo4KlEmPH2AuMx9or6CXK2IP09K1MWnpdOyNA3Y/8jlUOtOTATK68jBK9A==
   dependencies:
-    "@netlify/open-api" "^2.8.0"
+    "@netlify/open-api" "^2.11.0"
     lodash.camelcase "^4.3.0"
     micro-api-client "^3.3.0"
     node-fetch "^3.0.0"
