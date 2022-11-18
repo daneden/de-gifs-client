@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@netlify/open-api@^2.8.0":
-  version "2.9.0"
-  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.9.0.tgz#3fd18a95c06e7f11aad20b15c1e525accc86369f"
-  integrity sha512-XhGmVR8gldH9+3CzBg8C7aj7x/cThzlW/ob/o8ZAGMMJ7aVjs8WqzYpVsjdo4nulYi0zd0enlcuG9VwM1tsJyA==
+"@netlify/open-api@^2.12.0":
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/@netlify/open-api/-/open-api-2.12.1.tgz#cef928d33a9616ea4cd6f5749ba01485497a047a"
+  integrity sha512-/caRJIYmI8yZNnvqMTE3K8zI72GjzwqGF+aX77Nj653z1t5+Cs7DiV4Cnw8CsaF4nYFHAGwDU5eWTrpsCJLNhw==
 
 "@next/env@12.2.4":
   version "12.2.4"
@@ -148,10 +148,10 @@ https@^1.0.0:
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
   integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
 
-lodash.camelcase@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/lodash.camelcase/-/lodash.camelcase-4.3.0.tgz#b28aa6288a2b9fc651035c7711f65ab6190331a6"
-  integrity sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 loose-envify@^1.1.0:
   version "1.4.0"
@@ -170,13 +170,13 @@ nanoid@^3.3.4:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-netlify@^11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-11.0.1.tgz#ab2551001e3d2d845ac0c14c2138427c90a3935e"
-  integrity sha512-TkVuTvmhlAtvAdgqb+iA5wMehEHS5QcPOrULm1t809Q6KmZIhe+7b0+jwZSsDqgX3OWK/P3xgk/AU0ZbTv7ufw==
+netlify@^13.0.2:
+  version "13.0.2"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-13.0.2.tgz#6e0fe776bc780bffea964f6abd3507f15eac9040"
+  integrity sha512-n3Wap1GA2r5UQ4a5nZkcF/lEJXYbLcsqkXA5rYbeygWb7PCYFxb55OI/7EBvIHFTBjtF8OXBOCP3XomuHlqQWw==
   dependencies:
-    "@netlify/open-api" "^2.8.0"
-    lodash.camelcase "^4.3.0"
+    "@netlify/open-api" "^2.12.0"
+    lodash-es "^4.17.21"
     micro-api-client "^3.3.0"
     node-fetch "^3.0.0"
     omit.js "^2.0.2"
