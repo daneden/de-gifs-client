@@ -1,12 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Martian_Mono } from 'next/font/google'
 import './globals.css'
-
-const mono = Martian_Mono({
-  subsets: ['latin'],
-  axes: ['wdth'],
-  variable: '--font-mono',
-})
 
 export const metadata: Metadata = {
   title: 'gif.daneden.me',
@@ -15,14 +8,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#efebe2' },
-    { media: '(prefers-color-scheme: dark)', color: '#11100e' },
+    { media: '(prefers-color-scheme: light)', color: '#fafafa' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
   ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={mono.variable}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   )

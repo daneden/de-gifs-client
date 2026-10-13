@@ -204,7 +204,7 @@ export default function GifGrid({
         {relatedGifs.length > 0 && (
           <>
             <h2 className="divider">
-              <span>related</span>
+              <span>Related</span>
             </h2>
             <Sheet gifs={relatedGifs} active={active} onActivate={setActive} onCopy={copy} />
           </>
@@ -214,7 +214,7 @@ export default function GifGrid({
       <p className="toast" role="status" data-visible={!!copied} key={copied?.at}>
         {copied && (
           <>
-            <b>copied</b> {copied.url.replace(/^https?:\/\//, '')}
+            <b>Copied</b> {copied.url.replace(/^https?:\/\//, '')}
           </>
         )}
       </p>
@@ -260,7 +260,7 @@ const Frame = memo(function Frame({
   const href = `/${encodePath(gif.name)}`
   const ratio = Math.min(2.4, Math.max(0.55, gif.width / gif.height))
   const animated = gif.frames > 1
-  const [developed, setDeveloped] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   return (
     <li className="frame" style={{ '--ar': ratio } as CSSProperties}>
@@ -293,21 +293,37 @@ const Frame = memo(function Frame({
           height={gif.height}
           loading="lazy"
           decoding="async"
-          data-developed={developed}
-          onLoad={() => setDeveloped(true)}
+          data-loaded={loaded}
+          onLoad={() => setLoaded(true)}
           ref={(img) => {
-            if (img?.complete && img.naturalWidth) setDeveloped(true)
+            if (img?.complete && img.naturalWidth) setLoaded(true)
           }}
         />
         {playing && animated && <img className="motion" src={href} alt="" />}
-        <span className="edge">
-          <span className="edge-name">{gif.name}</span>
-          <span className="edge-meta">
-            {animated ? `${gif.frames}F · ` : ''}
-            {megabytes(gif.size)}
+        <span className="overlay">
+          {playing && <Marquee words={[...new Set([...gif.tags, ...(gif.ai?.tags ?? [])])]} />}
+          <span className="label">
+            <span className="label-name">{gif.name}</span>
+            <span className="label-meta">{megabytes(gif.size)}</span>
           </span>
         </span>
       </a>
     </li>
   )
 })
+
+// Two copies side by side, scrolled by exactly one copy's width, loop
+// seamlessly. Mounted only on the active frame, so 1,000 idle frames carry no
+// animation.
+function Marquee({ words }: { words: string[] }) {
+  if (!words.length) return null
+  const text = `${words.join(' · ')} · `
+  return (
+    <span className="marquee" aria-hidden="true" style={{ '--chars': text.length } as CSSProperties}>
+      <span className="marquee-track">
+        <span>{text}</span>
+        <span>{text}</span>
+      </span>
+    </span>
+  )
+}
