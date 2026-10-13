@@ -25,3 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 
 .now
+.vercel
+
+# typescript
+tsconfig.tsbuildinfo
+next-env.d.ts
